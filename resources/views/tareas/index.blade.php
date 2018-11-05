@@ -34,9 +34,13 @@
                    {!! link_to('tareas/'.$tarea->id.'/edit', 'Editar', ['class' => 'btn btn-primary']) !!}
                 </td>
                 <td>
-                   {!! Form::open(array('url' => 'tareas/' . $tarea->id, 'method' => 'DELETE')) !!}
-                      {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
-                   {!! Form::close() !!}
+                  @can('destroy_tareas')
+                    {!! Form::open(array('url' => 'tareas/' . $tarea->id, 'method' => 'DELETE')) !!}
+                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!}
+                  @else
+                     Usted no puede eliminar esta nota
+                  @endcan
                 </td>
              </tr>
           @endforeach

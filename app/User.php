@@ -6,9 +6,15 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+// Se agrega el trait para el manejo de roles
+use Spatie\Permission\Traits\HasRoles;
+
 class User extends Authenticatable
 {
     use Notifiable;
+
+    // Uso de Roles
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.

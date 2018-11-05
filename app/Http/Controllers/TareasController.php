@@ -151,5 +151,8 @@ class TareasController extends Controller
         ))->first();
         
         $tarea->delete();
+
+        // Redirigimos a la lista de tareas
+        return Redirect::to('tareas')->with('notice', 'Tarea eliminada correctamente.');
     }
 }

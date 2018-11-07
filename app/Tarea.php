@@ -1,6 +1,6 @@
 <?php
 
-namespace Tareas;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,11 +10,11 @@ class Tarea extends Model
 
 	public function usuario()
 	{
-		return $this->belongsTo('Tareas\User');
+		return $this->belongsTo('App\User');
 	}
 
 	public function estado()
 	{
-		return $this->belongsTo('Tareas\Estado');
+		return $this->belongsTo('App\Estado');
 	}
 }

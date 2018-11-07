@@ -39,12 +39,24 @@
                     {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
                   @else
-                     Usted no puede eliminar esta nota
+                    Usted no puede eliminar esta tarea
                   @endcan
                 </td>
              </tr>
           @endforeach
        </tbody>
     </table>
+
+    @role('Administrador')
+      <!-- <p>Soy un administrador</p> -->
+    @else
+      <!-- <p>No soy un administrador</p> -->
+    @endrole
+    
+    @can('destroy_tareas')
+      <!-- <p>Tengo el permiso destroy_tareas</p> -->
+    @else
+      <!-- <p>No tengo el permiso destroy_tareas</p> -->
+    @endcan
  </div>
  @endsection

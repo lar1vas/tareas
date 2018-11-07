@@ -1,15 +1,15 @@
 <?php
 
-namespace Tareas\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use Auth;
-use Tareas\User;
-use Tareas\Tarea;
-use Tareas\Estado;
+use App\User;
+use App\Tarea;
+use App\Estado;
 
-use Tareas\Http\Requests\TareasRequest;
+use App\Http\Requests\TareasRequest;
 
 // Esta librería nos permitirá hacer redireccionamiento de nuestras acciones.
 use Illuminate\Support\Facades\Redirect;
@@ -21,7 +21,7 @@ class TareasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // Mostrar registros existentes (GET)
         
@@ -30,6 +30,21 @@ class TareasController extends Controller
 
         // Devuelve las tareas del usuario que inicio sesion
         $tareas = User::find(Auth::id())->tareas;
+
+        // dd(User::find(Auth::id())->getRoleNames());
+        // dd(User::find(Auth::id())->getAllPermissions());
+        
+        // Saber si un usuario tiene un rol
+        // $user->hasRole('admin') 
+
+        // Saber si un usuario tiene un permiso
+        // $user->hasRole('admin');
+
+        // Listado de roles que posee el usuario
+        // $user->getRoleNames();
+
+        // Listado de Permisos de un usuario
+        // $user->getAllPermissions();
 
         return View('tareas.index')->with('tareas', $tareas);
     }

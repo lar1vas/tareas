@@ -156,11 +156,11 @@ return [
         /*
          * Application Service Providers...
          */
-        Tareas\Providers\AppServiceProvider::class,
-        Tareas\Providers\AuthServiceProvider::class,
-        // Tareas\Providers\BroadcastServiceProvider::class,
-        Tareas\Providers\EventServiceProvider::class,
-        Tareas\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

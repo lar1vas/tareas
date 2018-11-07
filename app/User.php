@@ -1,6 +1,6 @@
 <?php
 
-namespace Tareas;
+namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -36,6 +36,6 @@ class User extends Authenticatable
 
     public function tareas()
     {
-        return $this->hasMany('Tareas\Tarea');
+        return $this->hasMany('App\Tarea');
     }
 }

@@ -14,11 +14,11 @@
     {!! Form::open(array('url' => 'tareas/' . $tarea->id, 'method' => $method)) !!}
        <div class="form-group">
           {!! Form::label('titulo', 'Título') !!}
-          {!! Form::text('titulo', $tarea->titulo, ['class' => 'form-control']) !!}
+          {!! Form::text('titulo', $tarea->titulo, ['class' => 'form-control', 'required']) !!}
        </div>
        <div class="form-group">
           {!! Form::label('descripcion', 'Descripción') !!}
-          {!! Form::textarea('descripcion', $tarea->descripcion, ['class'=>'form-control', 'rows' => 2, 'cols' => 40]) !!}
+          {!! Form::textarea('descripcion', $tarea->descripcion, ['class'=>'form-control', 'rows' => 2, 'cols' => 40, 'required']) !!}
        </div>
        <div class="form-group">
           {!! Form::label('estado', 'Estado') !!}

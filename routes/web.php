@@ -32,5 +32,7 @@ Route::group( [['middleware' => 'auth']] , function ()
 // Agregando seguridad por Roles
 Route::group(['middleware' => ['role:Administrador']], function () {
 // Route::group(['middleware' => ['permission:destroy_tareas']], function () {
+// Route::group(['middleware' => ['role:Administrador','permission:universal']], function () {
+
     Route::delete('tareas/{tarea}', 'TareasController@destroy')->name('tareas.destroy');
 });

@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    @role('Administrador') 
+                        <p>Eres Administrador</p> 
+                    @else 
+                        <p>No eres Administrador</p> 
+                    @endrole
                 </div>
             </div>
         </div>

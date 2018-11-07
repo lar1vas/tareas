@@ -20,9 +20,8 @@ class RoleMiddleware
             return redirect('/login');
         }
      
-     // if (! $request->user()->is($role)) {
+        // if (! $request->user()->is($role)) {
         if (! $request->user()->hasRole($role) ) {
-            dd($role);
            abort(403);
         }
 

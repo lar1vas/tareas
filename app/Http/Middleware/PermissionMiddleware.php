@@ -20,7 +20,8 @@ class PermissionMiddleware
             return redirect('/login');
         }
      
-        if (! $request->user()->can($permission)) {
+        // if (! $request->user()->can($permission)) {
+        if (! $request->user()->hasPermissionTo($permission) ) {
            abort(403);
         }
 
